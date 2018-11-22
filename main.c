@@ -18,13 +18,18 @@ int main(int argc, char *argv[]) {
 	} 
 	str[i] = '\0';
 	
-	printf("%s\n", str);
+	i=0;
+	
+	while(str[i] != 0){
+		i++;
+	}
+	
+	printf("%s(%i)\n", str,i );
 	
 	/*src의 내용을 dst로 옮김*/
 	strcpy(dst, src);
 	
 	printf("%s(%i)\n", dst,	strlen(dst));
-
 	
 	return 0;
 }
