@@ -6,15 +6,32 @@
 
 int main(int argc, char *argv[]) {
 	
-	FILE *fp = NULL;
-	char input[100];
+	FILE *fpr = NULL;
+	FILE *fpw = NULL;
 	
-	fp = fopen("sample.txt", "r");
+	char input;
+	char original[100];
+	char copy[100];
+	int i=0;
 	
-	while( fgets(input, 100, fp) != NULL)
-		printf(input);
-		
-	fclose(fp);
+
+	printf("original file name : ");
+	scanf("%s", &original);
+	printf("copy file : ");
+	scanf("%s", copy);
+	
+	fpr = fopen(original, "r");
+	fpw = fopen(copy, "w");
+	
+	while( (input = fgetc(fpr)) != EOF){
+		fputc(input, fpw);
+		i++;
+	}
+	
+	printf("Copy succeed! (%i Byte copied)\n", i);
+	
+	fclose(fpr);
+	fclose(fpw);
 	
 	return 0;
 }
