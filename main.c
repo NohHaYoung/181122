@@ -12,7 +12,8 @@ int main(int argc, char *argv[]) {
 	/*src의 내용을 dst로 옮김*/
 	strcpy(dst, src);
 	
-	printf("%s\n", dst);
+	printf("%s(%i)\n", dst,	strlen(dst));
+
 	
 	return 0;
 }
