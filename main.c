@@ -8,6 +8,17 @@ int main(int argc, char *argv[]) {
 	
 	char src[100] = "programming course";
 	char dst[100];
+	char str[100];
+	int i;
+	/*src의 내용을 str로 옮김*/
+	
+	while( src[i] != '\0'){
+		str[i] = src[i];
+		i++;
+	} 
+	str[i] = '\0';
+	
+	printf("%s\n", str);
 	
 	/*src의 내용을 dst로 옮김*/
 	strcpy(dst, src);
