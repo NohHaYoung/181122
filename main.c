@@ -6,30 +6,20 @@
 
 int main(int argc, char *argv[]) {
 	
-	char src[100] = "programming course";
-	char dst[100];
-	char str[100];
+	FILE *fp = NULL;
+	char input[100];
 	int i;
-	/*src의 내용을 str로 옮김*/
 	
-	while( src[i] != '\0'){
-		str[i] = src[i];
-		i++;
-	} 
-	str[i] = '\0';
-	
-	i=0;
-	
-	while(str[i] != 0){
-		i++;
+	fp = fopen("sample.txt", "a");
+
+	for(i=0;i<3;i++){
+		printf("input a word : ");
+		scanf("%s", input);
+		fprintf(fp, "%s\n", input);
 	}
+
 	
-	printf("%s(%i)\n", str,i );
-	
-	/*src의 내용을 dst로 옮김*/
-	strcpy(dst, src);
-	
-	printf("%s(%i)\n", dst,	strlen(dst));
+	fclose(fp);
 	
 	return 0;
 }
