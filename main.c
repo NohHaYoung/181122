@@ -7,12 +7,12 @@
 int main(int argc, char *argv[]) {
 	
 	FILE *fp = NULL;
-	char c;
+	char input[100];
 	
 	fp = fopen("sample.txt", "r");
 	
-	while((c=fgetc(fp)) != EOF)
-		putchar(c);
+	while( fgets(input, 100, fp) != NULL)
+		printf(input);
 		
 	fclose(fp);
 	
