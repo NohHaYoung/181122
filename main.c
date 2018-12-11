@@ -7,27 +7,16 @@
 int main(int argc, char *argv[]) {
 	
 	FILE *fp = NULL;
-	
-	char filename[100];
-	char word[100];
+	char c;
 	char input[100];
-
-	printf("file name :");
-	scanf("%s", filename);
 	
-	fp = fopen(filename, "r");
+	fp = fopen("sample.txt", "r");
 	
-	printf("input a word to find :");
-	scanf("%s", word);
-	
-	while( fgets(input, 100, fp) != NULL){
-		if(strncmp(input, word, strlen(word))==0){
-			printf("find a word %s\n", input);
-		}
-	}
-	
-	printf("Search done!");
-	
+	while((c=fgetc(fp)) != EOF)
+		putchar(c);
+	while( fgets(input, 100, fp) != NULL)
+		printf(input);
+		
 	fclose(fp);
 	
 	return 0;
